@@ -1,0 +1,15 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    container_name: pg_restaurant_booking
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+volumes:
+  db-data:
