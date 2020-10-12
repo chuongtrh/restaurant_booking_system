@@ -30,6 +30,8 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         hotline: DataTypes.STRING,
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
     }, {
         sequelize,
         timestamps: true,

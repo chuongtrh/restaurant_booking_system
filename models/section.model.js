@@ -28,6 +28,8 @@ module.exports = (sequelize, DataTypes) => {
                 isIn: [['active', 'disabled']]
             }
         },
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
     }, {
         sequelize,
         timestamps: true,

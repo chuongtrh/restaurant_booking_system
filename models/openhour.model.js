@@ -22,7 +22,9 @@ module.exports = (sequelize, DataTypes) => {
         day_of_week: DataTypes.INTEGER,
         open_time: DataTypes.INTEGER,
         close_time: DataTypes.INTEGER,
-        last_order: DataTypes.INTEGER
+        last_order: DataTypes.INTEGER,
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
     }, {
         sequelize,
         timestamps: true,

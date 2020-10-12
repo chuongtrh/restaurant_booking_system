@@ -31,7 +31,9 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         min_seat: DataTypes.INTEGER,
-        max_seat: DataTypes.INTEGER
+        max_seat: DataTypes.INTEGER,
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
     }, {
         sequelize,
         timestamps: true,
