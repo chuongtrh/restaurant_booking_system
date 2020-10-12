@@ -1,6 +1,19 @@
 ###
 GET http://localhost:4000/ping
-
+Content-Type: application/json; charset=utf-8
 
 ###
-GET http://localhost:4000/api/restaurant/2
+GET http://localhost:4000/api/restaurant/1
+Content-Type: application/json; charset=utf-8
+
+###
+GET http://localhost:4000/api/branch/1
+Content-Type: application/json; charset=utf-8
+
+###
+GET http://localhost:4000/api/branch/restaurant/1
+Content-Type: application/json; charset=utf-8
+
+###
+GET http://localhost:4000/api/openhour/branch/1
+Content-Type: application/json; charset=utf-8

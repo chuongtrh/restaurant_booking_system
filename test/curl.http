@@ -1,0 +1,18 @@
+###
+curl -H "Content-Type: application/json" http://localhost:4000/ping
+
+
+###
+curl -H "Content-Type: application/json" http://localhost:4000/api/restaurant/1
+
+
+###
+curl -H "Content-Type: application/json" http://localhost:4000/api/branch/1
+
+
+###
+curl -H "Content-Type: application/json" http://localhost:4000/api/branch/restaurant/1
+
+
+###
+curl -H "Content-Type: application/json" http://localhost:4000/api/openhour/branch/1

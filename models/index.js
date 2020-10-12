@@ -56,7 +56,6 @@ const models = {
 Object.keys(models)
     .filter(key => typeof models[key].associate === "function")
     .forEach(key => {
-        console.info(`Load table ${key}`)
         if (models[key].associate) {
             models[key].associate(models);
         }

@@ -23,6 +23,8 @@ module.exports = function (app) {
 
     app.use('/api', beforeHandleAPI);
     app.use("/api/restaurant", require("./restaurant"));
+    app.use("/api/branch", require("./branch"));
+    app.use("/api/openhour", require("./openhour"));
 
     app.use('/api', afterHandleAPI);
 };
