@@ -12,6 +12,13 @@ Implement a database design and architecture of a restaurant booking system for 
 - Analytics
 
 **Example**:
+- Restaurant A, have two branchs: *branch 01* & *branch 02*
+- Branch 01, have two sections:
+    - Area A have 3 tables: A01, A02, A03
+    - Area B have 3 tables: B01, B02, B03
+- Branch 02, have two sections:
+    - Floor 1 have 3 tables: F101, F102, F103
+    - Floor 2 have 3 tables: F201, F202, F203
 
 ![Restaurant](./assets/screenshot/restaurant01.png)
 
