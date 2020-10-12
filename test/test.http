@@ -17,3 +17,21 @@ Content-Type: application/json; charset=utf-8
 ###
 GET http://localhost:4000/api/openhour/branch/1
 Content-Type: application/json; charset=utf-8
+
+
+###
+POST http://localhost:4000/api/branch/1/reservation
+Content-Type: application/json; charset=utf-8
+
+{
+    "reservationDate": "2020-10-14 18:00:00",
+    "adults":2,
+    "children":2,
+    "note": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups",
+    "guest": {
+        "firstName": "John",
+        "lastName": "Wick",
+        "email": "john@yopmail.com",
+        "phoneNumber":"+65111111"
+    }
+}

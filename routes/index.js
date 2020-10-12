@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     function afterHandleAPI(err, req, res, next) {
         console.error(err);
-        return res.status(500).send('Internal server error')
+        return res.error('Internal server error')
     }
 
     app.use(function (req, res, next) {
@@ -25,7 +25,6 @@ module.exports = function (app) {
     app.use("/api/restaurant", require("./restaurant"));
     app.use("/api/branch", require("./branch"));
     app.use("/api/openhour", require("./openhour"));
-    app.use("/api/reservation", require("./reservation"));
 
     app.use('/api', afterHandleAPI);
 };

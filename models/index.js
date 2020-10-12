@@ -51,6 +51,8 @@ const models = {
     Section: require(path.join(__dirname, "section.model.js"))(sequelize, Sequelize.DataTypes),
     OpenHour: require(path.join(__dirname, "openhour.model.js"))(sequelize, Sequelize.DataTypes),
     Table: require(path.join(__dirname, "table.model.js"))(sequelize, Sequelize.DataTypes),
+    Guest: require(path.join(__dirname, "guest.model.js"))(sequelize, Sequelize.DataTypes),
+    Reservation: require(path.join(__dirname, "reservation.model.js"))(sequelize, Sequelize.DataTypes),
 };
 
 Object.keys(models)
