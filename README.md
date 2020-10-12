@@ -12,6 +12,7 @@ Implement a database design and architecture of a restaurant booking system for 
 - Analytics
 
 **Example**:
+
 ![Restaurant](./assets/screenshot/restaurant01.png)
 
 ### Architecture
