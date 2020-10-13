@@ -3,6 +3,12 @@ const env = process.env.NODE_ENV || "local";
 const config = require("../config/database.config")[env];
 const path = require("path")
 
+//PostgreSQL TIMESTAMP WITHOUT TIME ZONE
+// require('pg').types.setTypeParser(1114, stringValue => {
+//     return new Date(stringValue + '+0000');
+//     // e.g., UTC offset. Use any offset that you would like.
+// });
+
 let sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
     port: config.port,

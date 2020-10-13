@@ -1,5 +1,6 @@
 const models = require('../models');
 const Reservation = models['Reservation'];
+const sequelize = require("sequelize");
 
 exports.createReservation = (reservationData) => {
     return Reservation.create(reservationData)
@@ -18,8 +19,10 @@ exports.getReservationsOfBranch = (branchId) => {
 exports.getReservationsOfBranchByDate = (branchId, reservationDate) => {
     return Reservation.findAll({
         where: {
-            branch_id: branchId,
-
+            [sequelize.Op.and]: [
+                { branch_id: branchId },
+                sequelize.literal(`reservation_date = '${reservationDate}'::date`),
+            ]
         }
     })
 };

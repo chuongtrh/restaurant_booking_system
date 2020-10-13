@@ -18,7 +18,10 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             reservation_date: {
-                type: Sequelize.DATE
+                type: Sequelize.DATEONLY
+            },
+            reservation_time: {
+                type: Sequelize.TIME
             },
             adults: {
                 type: Sequelize.INTEGER

@@ -1,3 +1,4 @@
+const moment = require('moment');
 const branchService = require("../services/branch.service");
 const reservationService = require("../services/reservation.service");
 const tableService = require("../services/table.service");
@@ -39,6 +40,7 @@ exports.getBranchInfo = async (req, res, next) => {
 exports.getReservations = async (req, res, next) => {
     let branchId = req.params.branchId;
     const { reservation_date } = req.query;
+    console.log('reservation_date', reservation_date);
     try {
         let reservations = await reservationService.getReservationsOfBranchByDate(branchId, reservation_date)
         return res.success("Okie", {
@@ -71,7 +73,7 @@ exports.createReservation = async (req, res, next) => {
     const { firstName, lastName, email, phoneNumber } = guest;
 
     try {
-        let guestInfo = await guestServixce.getGuestByEmail(email);
+        let guestInfo = await guestService.getGuestByEmail(email);
         if (!guestInfo) {
             const guestData = {
                 first_name: firstName,
@@ -82,10 +84,13 @@ exports.createReservation = async (req, res, next) => {
             guestInfo = await guestService.createGuest(guestData);
         }
 
+        let reservationTime = moment(reservationDate).format("HH:mm:ss");
+
         const reservationData = {
             branch_id: branchId,
             guest_id: guestInfo.id,
             reservation_date: reservationDate,
+            reservation_time: reservationTime,
             adults,
             children,
             note,
