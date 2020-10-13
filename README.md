@@ -221,6 +221,72 @@ Response:
 }
 ```
 
+- Submit a reservation
+Request:
+``` bash
+curl -H "Content-Type: application/json" -X POST http://localhost:4000/api/branch/1/reservation \
+-d '{
+    "reservationDate": "2020-10-15 18:00:00",
+    "adults":2,
+    "children":2,
+    "note": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups",
+    "guest": {
+        "firstName": "John",
+        "lastName": "Wick",
+        "email": "john@yopmail.com",
+        "phoneNumber":"+65111111"
+    }
+}'
+```
+Response:
+```json
+{
+  "status": "SUCCESS",
+  "message": "Okie",
+  "data": {
+    "id": 1,
+    "branch_id": 1,
+    "guest_id": 1,
+    "reservation_date": "2020-10-15",
+    "reservation_time": "18:00:00",
+    "adults": 2,
+    "children": 2,
+    "note": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups",
+    "status": "active",
+    "updatedAt": "2020-10-13T04:32:08.799Z",
+    "createdAt": "2020-10-13T04:32:08.799Z",
+    "table_id": null
+  }
+}
+```
 
+- Get list reservations of branch by date
+Request:
+``` bash
+curl -H "Content-Type: application/json" http://localhost:4000/api/branch/1/reservation?reservation_date=2020-10-15
+```
+Response:
+```json
+{
+  "status": "SUCCESS",
+  "message": "Okie",
+  "data": [
+    {
+      "id": 2,
+      "branch_id": 1,
+      "guest_id": 1,
+      "table_id": null,
+      "reservation_date": "2020-10-15",
+      "reservation_time": "18:00:00",
+      "adults": 2,
+      "children": 2,
+      "note": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups",
+      "status": "active",
+      "createdAt": "2020-10-13T04:22:35.103Z",
+      "updatedAt": "2020-10-13T04:22:35.103Z"
+    }
+  ]
+}
+```
 ## Author
 chuongtrh@gmail.com | [Github](https://github.com/chuongtrh)

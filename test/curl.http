@@ -16,3 +16,24 @@ curl -H "Content-Type: application/json" http://localhost:4000/api/branch/restau
 
 ###
 curl -H "Content-Type: application/json" http://localhost:4000/api/openhour/branch/1
+
+
+###
+curl -H "Content-Type: application/json" -X POST http://localhost:4000/api/branch/1/reservation \
+-d '{
+    "reservationDate": "2020-10-15 18:00:00",
+    "adults":2,
+    "children":2,
+    "note": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups",
+    "guest": {
+        "firstName": "John",
+        "lastName": "Wick",
+        "email": "john@yopmail.com",
+        "phoneNumber":"+65111111"
+    }
+}'
+
+
+
+###
+curl -H "Content-Type: application/json" http://localhost:4000/api/branch/1/reservation?reservation_date=2020-10-15
